@@ -36,6 +36,45 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 
 The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
 
+
+```{r}
+
+BrLw <-function(numClass=35,odds=2,countoDo=637){
+
+ 
+
+days=1:365
+
+count=countoDo
+
+repeatn=numClass
+
+varstor=numeric()
+
+  brownlow = 0
+
+  for (i in 1:countoDo) {
+
+    sam=sample(days,size=numClass,replace = T)
+
+    y=duplicated(sam)
+
+    if (sum(y)>0) brownlow=brownlow+1
+
+    else brownlow = brownlow - odds
+
+  }
+
+ return(brownlow)
+
+}
+
+ 
+
+```
+
+
+
 # In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
 ## what is their average earnings
 ## the standard deviation and a 95% confidence interval for their earnings?
